@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             color: #333;
             margin: 0;
             display: flex;
@@ -16,41 +16,51 @@
             min-height: 100vh;
             flex-direction: column;
             text-align: center;
+            padding: 20px;
         }
 
         h1 {
             color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
 
         h2 {
             color: #333;
-            font-size: 1.5em;
+            font-size: 1.8em;
         }
 
         ul {
             list-style-type: disc;
-            margin: 10px 0;
+            margin: 15px 0;
             padding: 0 20px;
             text-align: left;
         }
 
         li {
-            margin: 5px 0;
+            margin: 8px 0;
+            line-height: 1.5;
         }
 
         .color-options {
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         .color-options span {
             display: inline-block;
-            width: 100px;
-            padding: 5px;
-            margin: 5px;
+            width: 110px;
+            padding: 8px;
+            margin: 8px;
             text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .color-options span:hover {
+            transform: scale(1.1);
+            border-color: #4CAF50;
         }
 
         .blue { background-color: #00f; color: #fff; }
@@ -58,7 +68,7 @@
         .black { background-color: #000; color: #fff; }
 
         .version {
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .highlight {
@@ -67,58 +77,65 @@
         }
 
         .screenshots {
-            margin: 20px 0;
+            margin: 30px 0;
+            overflow-x: auto;
+            white-space: nowrap;
         }
 
         .screenshots img {
-            max-width: 100%;
-            height: auto;
-            display: none;
-            margin: 10px 0;
+            max-height: 200px;
+            margin: 0 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .screenshots img {
+                max-height: 150px;
+                margin: 5px;
+            }
         }
 
         .download-buttons {
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .download-buttons a {
             display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 12px 24px;
+            margin: 10px;
             text-decoration: none;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
 
         .blue-btn { background-color: #00f; }
         .purple-btn { background-color: #800080; }
         .black-btn { background-color: #000; }
 
+        .download-buttons a:hover {
+            opacity: 0.8;
+        }
+
         .warnings {
-            margin-top: 20px;
-            padding: 10px;
+            margin-top: 40px;
+            padding: 20px;
             background-color: #ffcccc;
-            border: 1px solid #ff0000;
-            border-radius: 5px;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
             color: #d80000;
             text-align: left;
-            width: 80%;
-            max-width: 600px;
+            width: 90%;
+            max-width: 700px;
             font-weight: bold;
         }
 
         .warnings p {
-            margin: 10px 0;
+            margin: 15px 0;
+            line-height: 1.4;
         }
     </style>
-    <script>
-        function toggleScreenshots() {
-            var images = document.querySelectorAll('.screenshots img');
-            images.forEach(function(img) {
-                img.style.display = (img.style.display === 'block') ? 'none' : 'block';
-            });
-        }
-    </script>
 </head>
 <body>
 
@@ -172,20 +189,18 @@
 
     <div class="screenshots">
         <h2>Prints de Tela</h2>
-        <button onclick="toggleScreenshots()">Mostrar/Ocultar Imagens</button>
         <img src="https://i.postimg.cc/RFF9wtF5/foto-1719442484-1.jpg" alt="home">
         <img src="https://i.postimg.cc/d0nw76Jj/foto-1719442466-1.jpg" alt="opções">
         <img src="https://i.postimg.cc/ydbKjNgJ/foto-1719442452-1.jpg" alt="salas">
         <img src="https://i.postimg.cc/dQhZYk9x/foto-1719442421-1.jpg" alt="config-salas">
         <img src="https://i.postimg.cc/6TsXs1ht/foto-1719442369-1.jpg" alt="dentro-sala">
-        
     </div>
 
     <div class="download-buttons">
         <h2>Download</h2>
-        <a href="https://mega.nz/file/z8A2CTiI#mLLVg7c4-ZNwSq4gTb2UjBn6SNSARExbkvN1-LtojC4" class="blue-btn">Baixar Azul Original</a>
-        <a href="https://mega.nz/file/GhAwHRYR#3tkYQuXDvhY8Msp47Vmc6s4nYPLXO2WEoNONk3udDZo" class="purple-btn">Baixar Roxo</a>
-        <a href="https://mega.nz/file/S14XwC5D#aABJ-pX8UBXIUfVolVUIoWlrF8KS2F2prCvc9mhv-L8" class="black-btn">Baixar Preto</a>
+        <a href="https://mega.nz/file/z8A2CTiI#mLLVg7c4-ZNwSq4gTb2UjBn6SNSARExbkvN1-LtojC4" class="blue-btn" target="_blank">Baixar Azul Original</a>
+        <a href="https://mega.nz/file/GhAwHRYR#3tkYQuXDvhY8Msp47Vmc6s4nYPLXO2WEoNONk3udDZo" class="purple-btn" target="_blank">Baixar Roxo</a>
+        <a href="https://mega.nz/file/S14XwC5D#aABJ-pX8UBXIUfVolVUIoWlrF8KS2F2prCvc9mhv-L8" class="black-btn" target="_blank">Baixar Preto</a>
     </div>
 
     <div class="warnings">
