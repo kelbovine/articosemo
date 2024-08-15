@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarticMod by Kel</title>
+    <link rel="icon" href="https://gartic.com.br/imgs/mural/ii/iikyuung/estranho-mundo-de-jack.png" type="image/png">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -63,7 +64,7 @@
             border-color: #4CAF50;
         }
 
-        .blue { background-color: #00f; color: #fff; }
+        .blue { background-color: #0085ff; color: #fff; }
         .purple { background-color: #800080; color: #fff; }
         .black { background-color: #000; color: #fff; }
 
@@ -112,6 +113,7 @@
             display: none;
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
 
         .popup img {
@@ -120,12 +122,28 @@
             border-radius: 8px;
         }
 
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
         .popup:target {
             display: flex;
         }
 
         .download-buttons {
             margin: 30px 0;
+            display: none;
+        }
+
+        .download-buttons.active {
+            display: block;
         }
 
         .download-buttons a {
@@ -138,7 +156,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .blue-btn { background-color: #00f; }
+        .blue-btn { background-color: #0085ff; }
         .purple-btn { background-color: #800080; }
         .black-btn { background-color: #000; }
 
@@ -191,17 +209,16 @@
         }
 
         .disclaimer {
-    margin-top: 40px;
-    padding: 15px;
-    background-color: #fff3cd;
-    border-left: 5px solid #ffeeba;
-    color: #856404;
-    text-align: left;
-    font-weight: bold;
-    width: 90%;
-    max-width: 700px;
-}
-
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #ffeeba;
+            color: #856404;
+            text-align: left;
+            font-weight: bold;
+            width: 90%;
+            max-width: 700px;
+        }
     </style>
 </head>
 <body>
@@ -209,16 +226,9 @@
     <h1>GarticMod by Kel</h1>
 
     <p>Aqui está o novo mod do Gartic para Android com funções desbloqueadas e habilitadas.</p>
-    <p>SITE DEFINITIVO POIS, o anterior do blogger era bagunçado.</p>
-
-    <div class="color-options">
-        <h2>Disponível em Cores:</h2>
-        <span class="blue">Azul Original</span>
-        <span class="purple">Roxo</span>
-        <span class="black">Preto</span>
-    </div>
-
-    <div class="version">
+    <p>SITE DEFINITIVO. Pois, o anterior do blogger era bagunçado.</p>
+    
+        <div class="version">
         <h2>Versão Gratuita 5.10</h2>
         <h3>Principais Mudanças:</h3>
         <ul>
@@ -255,44 +265,107 @@
     <p><strong>Não se esqueça de desativar o Play Protect da Play Store para instalá-lo.</strong></p>
     <p>No config info do app, marque para abrir com... marcando todos os links do Gartic.</p>
 
-    <div class="screenshots">
-        <h2>Prints de Tela</h2>
-        <a href="#popup1"><img src="https://i.postimg.cc/RFF9wtF5/foto-1719442484-1.jpg" alt="home"></a>
-        <a href="#popup2"><img src="https://i.postimg.cc/d0nw76Jj/foto-1719442466-1.jpg" alt="opções"></a>
-        <a href="#popup3"><img src="https://i.postimg.cc/ydbKjNgJ/foto-1719442452-1.jpg" alt="salas"></a>
-        <a href="#popup4"><img src="https://i.postimg.cc/dQhZYk9x/foto-1719442421-1.jpg" alt="config-salas"></a>
-        <a href="#popup5"><img src="https://i.postimg.cc/6TsXs1ht/foto-1719442369-1.jpg" alt="dentro-sala"></a>
+    <div class="color-options">
+        <h2>Disponível em Cores:</h2>
+        <span class="blue" onclick="showMod('blue')">Azul Original</span>
+        <span class="purple" onclick="showMod('purple')">Roxo</span>
+        <span class="black" onclick="showMod('black')">Preto</span>
+    </div>
+
+    <div class="screenshots" id="blue-screenshots" style="display:none;">
+        <h2>Mod Azul Original</h2>
+        <a href="#popup1"><img src="https://i.postimg.cc/qqtvFR36/Screenshot-20240815-191409-Gartic.jpg" alt="Azul 1"></a>
+        <a href="#popup2"><img src="https://i.postimg.cc/NFWjvc6J/Screenshot-20240815-191415-Gartic.jpg" alt="Azul 2"></a>
+        <a href="#popup3"><img src="https://i.postimg.cc/RC8FHck7/Screenshot-20240815-191423-Gartic.jpg" alt="Azul 3"></a>
+        <a href="#popup4"><img src="https://i.postimg.cc/VLCNBJw3/Screenshot-20240815-191443-Gartic.jpg" alt="Azul 4"></a>
+    </div>
+
+    <div class="screenshots" id="purple-screenshots" style="display:none;">
+        <h2>Mod Roxo</h2>
+        <a href="#popup5"><img src="https://i.postimg.cc/JhmthM9S/Screenshot-20240815-191514-Gartic.jpg" alt="Roxo 1"></a>
+        <a href="#popup6"><img src="https://i.postimg.cc/vBZBWX8z/Screenshot-20240815-191520-Gartic.jpg" alt="Roxo 2"></a>
+        <a href="#popup7"><img src="https://i.postimg.cc/qRD7Qnzd/Screenshot-20240815-191528-Gartic.jpg" alt="Roxo 3"></a>
+        <a href="#popup8"><img src="https://i.postimg.cc/TP91LBx1/Screenshot-20240815-191552-Gartic.jpg" alt="Roxo 4"></a>
+    </div>
+
+    <div class="screenshots" id="black-screenshots" style="display:none;">
+        <h2>Mod Preto</h2>
+        <a href="#popup9"><img src="https://i.postimg.cc/05H6CgwJ/Screenshot-20240815-191134-Gartic.jpg" alt="Preto 1"></a>
+        <a href="#popup10"><img src="https://i.postimg.cc/3JsdPg98/Screenshot-20240815-191149-Gartic.jpg" alt="Preto 2"></a>
+        <a href="#popup11"><img src="https://i.postimg.cc/3JsdPg98/Screenshot-20240815-191149-Gartic.jpg" alt="Preto 3"></a>
+        <a href="#popup12"><img src="https://i.postimg.cc/wjD7H7bh/Screenshot-20240815-191308-Gartic.jpg" alt="Preto 4"></a>
+    </div>
+
+    <div class="download-buttons" id="blue-buttons">
+        <h2>Download Mod Azul Original:</h2>
+        <a href="https://www.mediafire.com/file/4u13b4e1v06s1cg/GarticModOriginal5.10Final.apk/file" class="blue-btn">Baixar</a>
+    </div>
+
+    <div class="download-buttons" id="purple-buttons">
+        <h2>Download Mod Roxo:</h2>
+        <a href="https://www.mediafire.com/file/gnv8teyf8aow6l3/GarticModRoxo5.10Final.apk/file" class="purple-btn">Baixar</a>
+    </div>
+
+    <div class="download-buttons" id="black-buttons">
+        <h2>Download Mod Preto:</h2>
+        <a href="https://www.mediafire.com/file/t87whkbo54003sb/GarticModPreto5.10Final.apk/file" class="black-btn">Baixar</a>
     </div>
 
     <div id="popup1" class="popup">
-        <a href="#"><img src="https://i.postimg.cc/RFF9wtF5/foto-1719442484-1.jpg" alt="home"></a>
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/qqtvFR36/Screenshot-20240815-191409-Gartic.jpg" alt="Azul 1">
     </div>
     <div id="popup2" class="popup">
-        <a href="#"><img src="https://i.postimg.cc/d0nw76Jj/foto-1719442466-1.jpg" alt="opções"></a>
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/NFWjvc6J/Screenshot-20240815-191415-Gartic.jpg" alt="Azul 2">
     </div>
     <div id="popup3" class="popup">
-        <a href="#"><img src="https://i.postimg.cc/ydbKjNgJ/foto-1719442452-1.jpg" alt="salas"></a>
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/RC8FHck7/Screenshot-20240815-191423-Gartic.jpg" alt="Azul 3">
     </div>
     <div id="popup4" class="popup">
-        <a href="#"><img src="https://i.postimg.cc/dQhZYk9x/foto-1719442421-1.jpg" alt="config-salas"></a>
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/VLCNBJw3/Screenshot-20240815-191443-Gartic.jpg" alt="Azul 4">
     </div>
     <div id="popup5" class="popup">
-        <a href="#"><img src="https://i.postimg.cc/6TsXs1ht/foto-1719442369-1.jpg" alt="dentro-sala"></a>
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/JhmthM9S/Screenshot-20240815-191514-Gartic.jpg" alt="Roxo 1">
     </div>
-
-    <div class="download-buttons">
-        <h2>Download</h2>
-        <a href="https://www.mediafire.com/file/4u13b4e1v06s1cg/GarticModOriginal5.10Final.apk/file" class="blue-btn" target="_blank">Baixar Azul Original</a>
-        <a href="https://www.mediafire.com/file/gnv8teyf8aow6l3/GarticModRoxo5.10Final.apk/file" class="purple-btn" target="_blank">Baixar Roxo</a>
-        <a href="https://www.mediafire.com/file/t87whkbo54003sb/GarticModPreto5.10Final.apk/file" class="black-btn" target="_blank">Baixar Preto</a>
+    <div id="popup6" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/vBZBWX8z/Screenshot-20240815-191520-Gartic.jpg" alt="Roxo 2">
+    </div>
+    <div id="popup7" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/qRD7Qnzd/Screenshot-20240815-191528-Gartic.jpg" alt="Roxo 3">
+    </div>
+    <div id="popup8" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/TP91LBx1/Screenshot-20240815-191552-Gartic.jpg" alt="Roxo 4">
+    </div>
+    <div id="popup9" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/05H6CgwJ/Screenshot-20240815-191134-Gartic.jpg" alt="Preto 1">
+    </div>
+    <div id="popup10" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/FsQKcCLT/Screenshot-20240815-191149-Gartic.jpg" alt="Preto 2">
+    </div>
+    <div id="popup11" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/7YVY8G8X/Screenshot-20240815-191214-Gartic.jpg" alt="Preto 3">
+    </div>
+    <div id="popup12" class="popup">
+        <a href="#!" class="close">&times;</a>
+        <img src="https://i.postimg.cc/fTVhs1DL/Screenshot-20240815-191245-Gartic.jpg" alt="Preto 4">
     </div>
 
     <div class="warnings">
-        <h2>Avisos</h2>
-        <p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE. NO MOD ORIGINAL, ATÉ É DE BOA, MAS NO MOD ROXO, NÃO. OS ADMs ACHAM QUE É HACK.</p>
+        <h2>⚠️ ATENÇÃO</h2>
+        <p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE.  OS ADMs ACHAM QUE É HACK. DE ACORDO COM A REGRA 46</p>
         <p>⚠️ NÃO FALE DE GARTIC MOD NO JOGO TAMBÉM. FALE ABREVIADO OU DE UMA MANEIRA QUE O OUTRO ENTENDA.</p>
         <p>⚠️ CASO NÃO CONFIE NESSES LINKS, ME CHAME NO PRIVADO DO DISCORD: USER: INTOCADO.</p>
-    </div>
+</div>
 
     <div class="faqs">
         <h2>FAQs</h2>
@@ -306,6 +379,18 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 
+    <script>
+        function showMod(color) {
+            const colors = ['blue', 'purple', 'black'];
+            colors.forEach(c => {
+                document.getElementById(`${c}-screenshots`).style.display = 'none';
+                document.getElementById(`${c}-buttons`).classList.remove('active');
+            });
+            document.getElementById(`${color}-screenshots`).style.display = 'block';
+            document.getElementById(`${color}-buttons`).classList.add('active');
+        }
+    </script>
+        <p><strong>Atualização 15/08</strong>  ^^</p>
 
 </body>
 </html>
