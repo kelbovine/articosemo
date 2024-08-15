@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarticMod by Kel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .color-options {
+            margin: 10px 0;
+        }
+
+        .color-options span {
+            display: inline-block;
+            width: 100px;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .blue { background-color: #00f; color: #fff; }
+        .purple { background-color: #800080; color: #fff; }
+        .black { background-color: #000; color: #fff; }
+
+        .version {
+            margin: 20px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #FF5722;
+        }
+
+        .screenshots {
+            margin: 20px 0;
+        }
+
+        .screenshots img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+            margin: 10px 0;
+        }
+
+        .download-buttons {
+            margin: 20px 0;
+        }
+
+        .download-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .blue-btn { background-color: #00f; }
+        .purple-btn { background-color: #800080; }
+        .black-btn { background-color: #000; }
+
+        .warnings {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffcccc;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            color: #d80000;
+            text-align: left;
+            width: 80%;
+            max-width: 600px;
+            font-weight: bold;
+        }
+
+        .warnings p {
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function toggleScreenshots() {
+            var images = document.querySelectorAll('.screenshots img');
+            images.forEach(function(img) {
+                img.style.display = (img.style.display === 'block') ? 'none' : 'block';
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <h1>GarticMod by Kel</h1>
+
+    <p>Aqui está o novo mod do Gartic para Android com funções desbloqueadas e habilitadas.</p>
+
+    <div class="color-options">
+        <h2>Disponível em Cores:</h2>
+        <span class="blue">Azul Original</span>
+        <span class="purple">Roxo</span>
+        <span class="black">Preto</span>
+    </div>
+
+    <div class="version">
+        <h2>Versão Gratuita 5.9.8</h2>
+        <h3>Principais Mudanças:</h3>
+        <ul>
+            <li><span class="highlight">1. Possibilidade de entrar em qualquer sala oficial:</span> Escolha qualquer sala para jogar, também é possível entrar via link. Desbloqueado.</li>
+            <li><span class="highlight">2. Novas cores para desenhar:</span> Adicionados 20 novas cores. Sugestões? Me mande um oi no Discord: <strong>User: Intocado</strong>.</li>
+            <li><span class="highlight">3. Botão de denúncia sempre ativado:</span> Agora você pode denunciar na tela de vez de alguém. Há dois bugs raros, um é denunciar sua própria vez e o outro é denunciar o mesmo desenho duas vezes.</li>
+            <li><span class="highlight">4. Intervalos:</span> Agora o intervalo conta com várias frases. Para remover ou sugerir novas frases, versão Premium.</li>
+            <li><span class="highlight">5. "Obra de Arte" e "Cancelado":</span> Mais frases justas adicionadas.</li>
+            <li><span class="highlight">6. Flood:</span> Flood sem bloqueio após três envios.</li>
+            <li><span class="highlight">7. Xingamentos:</span> Permitido alguns xingamentos sem bloqueio.</li>
+            <li><span class="highlight">8. Contador de mensagem do chat e o chat:</span> Contador ajustado para 199+ e mensagens somem após 1K no chat.</li>
+            <li><span class="highlight">9. Input do teclado sempre habilitado:</span> Agora é possível digitar nos intervalos e após acertar o desenho.</li>
+            <li><span class="highlight">10. Vitórias visíveis (novidade 11/06):</span> Agora é possível ver as vitórias de alguém em cada sala.</li>
+            <li><span class="highlight">11. Segundo plano volta a funcionar:</span> Funcionando novamente o segundo plano, exibido na barra de notificações.</li>
+        </ul>
+
+        <h3>E Mais Algumas Coisas:</h3>
+        <ul>
+            <li>Diminuído os avatares e o balão de conversa do chat.</li>
+            <li>Diminuídos alguns delays, como tempo de resposta no envio e de lista de salas.</li>
+            <li>Removidos anúncios.</li>
+            <li>Fonte padrão é Google Sans em Bold.</li>
+            <li>Botão de link de sala no botão (i) nas salas.</li>
+            <li>Ignorar alguém por comando também ignora nas respostas.</li>
+            <li>Ícone de acerto para o próprio jogador adicionado.</li>
+            <li>Removidos bloatwares do próprio jogo, como botões de redes sociais do Gartic.</li>
+            <li>Mais opções em salas criadas (sem spoilers).</li>
+            <li>"Saiu do jogo" trocado para "Saiu da sala".</li>
+            <li>GTC salas em opções serve apenas para ver. Futuras atualizações podem ativá-lo.</li>
+        </ul>
+    </div>
+
+    <p><strong>Compatível para Android 6 a Android 12 totalmente.</strong> De Android 13 a 15 pode ter bug de notificações devido ao desenvolvimento até Android 11.</p>
+    <p><strong>Não se esqueça de desativar o Play Protect da Play Store para instalá-lo.</strong></p>
+    <p>No config info do app, marque para abrir com... marcando todos os links do Gartic.</p>
+
+    <div class="screenshots">
+        <h2>Prints de Tela</h2>
+        <button onclick="toggleScreenshots()">Mostrar/Ocultar Imagens</button>
+        <img src="screenshot1.jpg" alt="Screenshot 1">
+        <img src="screenshot2.jpg" alt="Screenshot 2">
+        <img src="screenshot3.jpg" alt="Screenshot 3">
+    </div>
+
+    <div class="download-buttons">
+        <h2>Download</h2>
+        <a href="#" class="blue-btn">Baixar Azul Original</a>
+        <a href="#" class="purple-btn">Baixar Roxo</a>
+        <a href="#" class="black-btn">Baixar Preto</a>
+    </div>
+
+    <div class="warnings">
+        <p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE. NO MOD ORIGINAL, ATÉ É DE BOA, MAS NO MOD ROXO, NÃO. OS ADMs ACHAM QUE É HACK.</p>
+        <p>⚠️ NÃO FALE DE GARTIC MOD NO JOGO TAMBÉM. FALE ABREVIADO OU DE UMA MANEIRA QUE O OUTRO ENTENDA.</p>
+        <p>⚠️ CASO NÃO CONFIE NESSES LINKS, ME CHAME NO PRIVADO DO DISCORD: USER: INTOCADO.</p>
+    </div>
+
+</body>
+</html>
