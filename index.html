@@ -392,16 +392,21 @@
 <div class="upcoming-features">
         <h2>Agora contém várias versões.</h2>
         <ul>
-            <li><span class="highlight">Agora está divido o desenvolvimento contendo várias versões</span> Versão alpha, beta, rz (privado) e pública.</li>
+            <li><span class="highlight">Agora está divido o desenvolvimento contendo várias versões:</span> Versão alpha, beta, rz (privado) e pública.</li>
         </ul>
     </div>
 
-    <div class="warnings">
-        <h2>⚠️ ATENÇÃO REDOBRADA</h2>
-                <p>⚠️ NÃO CLIQUE BASTANTE NO BOTÃO DE ENTRAR (0.5s a 3s), NUMA SALA CHEIA, VAI SER BLOQUEADO PELO IP, E FICARÁ EM LOOP INFINITO (CARREGAMENTO RODANDO SEM PARAR), ENTÃO CLIQUE A CADA 5seg OU ESPERE O CONTADOR DESCER PRA VAGA DISPONÍVEL.</p>
-        <p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE.  OS ADMs ACHAM QUE É HACK. DE ACORDO COM A REGRA 46</p>
-        <p>⚠️ NÃO FALE DE GARTIC MOD NO JOGO TAMBÉM. FALE ABREVIADO OU DE UMA MANEIRA QUE O OUTRO ENTENDA.</p>
-        <p>⚠️ CASO NÃO CONFIE NESSES LINKS, ME CHAME NO PRIVADO DO DISCORD: USER: INTOCADO.</p>
+<div class="warnings">
+    <h2>⚠️ ATENÇÃO REDOBRADA</h2>
+    <p>⚠️ NÃO CLIQUE BASTANTE NO BOTÃO DE ENTRAR (0.5s a 3s), NUMA SALA CHEIA, VAI SER BLOQUEADO PELO IP, E FICARÁ EM LOOP INFINITO (CARREGAMENTO RODANDO SEM PARAR), ENTÃO CLIQUE A CADA 5seg OU ESPERE O CONTADOR DESCER PRA VAGA DISPONÍVEL.</p>
+    <p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE. OS ADMs ACHAM QUE É HACK. DE ACORDO COM A <span class="clickable-rule" onclick="showRule46()" style="cursor: pointer; color: blue; text-decoration: underline;">REGRA 46</span></p>
+    <p>⚠️ NÃO FALE DE GARTIC MOD NO JOGO TAMBÉM. FALE ABREVIADO OU DE UMA MANEIRA QUE O OUTRO ENTENDA.</p>
+    <p>⚠️ CASO NÃO CONFIE NESSES LINKS, ME CHAME NO PRIVADO DO DISCORD: USER: INTOCADO.</p>
+</div>
+
+<!-- Container para a Regra 46 -->
+<div id="rule46" style="display:none; margin-top: 10px; background-color: #f8d7da; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px;">
+    <strong>Regra 46:</strong> O usuário que fizer o uso de bots, hacks ou quaisquer outros meios automáticos, sob qualquer circunstância dentro ou fora do jogo, estará sujeito à perda imediata da conta sem aviso prévio (incluindo suas contas vinculadas).
 </div>
 
     <div class="faqs">
@@ -419,16 +424,23 @@
 </div>
 
     <script>
-        function showMod(color) {
-            const colors = ['blue', 'purple', 'black'];
-            colors.forEach(c => {
-                document.getElementById(`${c}-screenshots`).style.display = 'none';
-                document.getElementById(`${c}-buttons`).classList.remove('active');
-            });
-            document.getElementById(`${color}-screenshots`).style.display = 'block';
-            document.getElementById(`${color}-buttons`).classList.add('active');
-        }
-    </script>
+    // Função para mostrar/ocultar a Regra 46
+    function showRule46() {
+        var rule = document.getElementById('rule46');
+        rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Função para alterar o conteúdo das cores (mod)
+    function showMod(color) {
+        const colors = ['blue', 'purple', 'black'];
+        colors.forEach(c => {
+            document.getElementById(`${c}-screenshots`).style.display = 'none';
+            document.getElementById(`${c}-buttons`).classList.remove('active');
+        });
+        document.getElementById(`${color}-screenshots`).style.display = 'block';
+        document.getElementById(`${color}-buttons`).classList.add('active');
+    }
+</script>
         <p><strong>Atualização 30/08</strong>  ^^</p>
     <p><strong>Nova Atualização</strong>  Veja novidades acima.</p>
 </body>
