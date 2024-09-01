@@ -396,12 +396,18 @@
         </ul>
     </div>
 
-<div class="warnings">
-    <h2>⚠️ ATENÇÃO REDOBRADA</h2>
-    <p>⚠️ NÃO CLIQUE BASTANTE NO BOTÃO DE ENTRAR (0.5s a 3s), NUMA SALA CHEIA, VAI SER BLOQUEADO PELO IP, E FICARÁ EM LOOP INFINITO (CARREGAMENTO RODANDO SEM PARAR), ENTÃO CLIQUE A CADA 5seg OU ESPERE O CONTADOR DESCER PRA VAGA DISPONÍVEL.</p>
-    <p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE. OS ADMs ACHAM QUE É HACK. DE ACORDO COM A <span class="clickable-rule" onclick="showRule46()" style="cursor: pointer; color: blue; text-decoration: underline;">REGRA 46</span></p>
-    <p>⚠️ NÃO FALE DE GARTIC MOD NO JOGO TAMBÉM. FALE ABREVIADO OU DE UMA MANEIRA QUE O OUTRO ENTENDA.</p>
-    <p>⚠️ CASO NÃO CONFIE NESSES LINKS, ME CHAME NO PRIVADO DO DISCORD: USER: INTOCADO.</p>
+<h2>⚠️ ATENÇÃO REDOBRADA</h2>
+<p>
+    <span class="clickable-warning" onclick="showExplanation()" style="cursor: pointer; color: blue; text-decoration: underline;">
+        ⚠️ NÃO CLIQUE BASTANTE NO BOTÃO DE ENTRAR (0.5s a 3s)
+    </span>, NUMA SALA CHEIA, VAI SER BLOQUEADO PELO IP, E FICARÁ EM LOOP INFINITO (CARREGAMENTO RODANDO SEM PARAR), ENTÃO CLIQUE A CADA 5seg OU ESPERE O CONTADOR DESCER PRA VAGA DISPONÍVEL.
+</p>
+<p>⚠️ NÃO POSTE PRINTS EM FOTOS DO SITE GARTIC, VOCÊ SERÁ BANIDO PERMANENTEMENTE. OS ADMs ACHAM QUE É HACK. DE ACORDO COM A <span class="clickable-rule" onclick="showRule46()" style="cursor: pointer; color: blue; text-decoration: underline;">REGRA 46</span></p>
+<p>⚠️ NÃO FALE DE GARTIC MOD NO JOGO TAMBÉM. FALE ABREVIADO OU DE UMA MANEIRA QUE O OUTRO ENTENDA.</p>
+<p>⚠️ CASO NÃO CONFIE NESSES LINKS, ME CHAME NO PRIVADO DO DISCORD: USER: INTOCADO.</p>
+
+<div id="explanation" style="display: none; margin-top: 10px; background-color: #f8f9fa; padding: 10px; border: 1px solid #ddd;">
+    É porque para evitar entrar em uma sala cheia através de um bug, o Gartic colocou um limite de tentativas de acesso ao clicar no botão de entrada, tanto no aplicativo normal/mod quanto no site de PC. Alguns meses atrás, havia bots que entravam e enchiam as salas, mesmo as cheias, tanto em contas não-cadastradas quanto em salas criadas.
 </div>
 
 <!-- Container para a Regra 46 -->
@@ -424,13 +430,12 @@
 </div>
 
     <script>
-    // Função para mostrar/ocultar a Regra 46
     function showRule46() {
         var rule = document.getElementById('rule46');
         rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
     }
 
-    // Função para alterar o conteúdo das cores (mod)
+    
     function showMod(color) {
         const colors = ['blue', 'purple', 'black'];
         colors.forEach(c => {
@@ -440,7 +445,7 @@
         document.getElementById(`${color}-screenshots`).style.display = 'block';
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
-</script>
+    </script>
         <p><strong>Atualização 30/08</strong>  ^^</p>
     <p><strong>Nova Atualização</strong>  Veja novidades acima.</p>
 </body>
