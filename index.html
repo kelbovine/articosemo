@@ -229,7 +229,7 @@
 
     <p>Aqui está o novo mod do Gartic com funções desbloqueadas e habilitadas.</p>
     <p>SITE DEFINITIVO. Pois, o anterior do blogger era bagunçado.</p>
-    
+    <div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif;"></div>
         <div class="version">
         <h2>Versão Pública (Final) 5.50</h2>
         <h3>Principais Mudanças:</h3>
@@ -380,9 +380,10 @@
         <h2>Próxima atualização, daqui a pouco!!!</h2>
         <ul>
             <li><span class="highlight">Próximos a desenhar:</span> Possível ver os próximos a desenhar na tela do desenho (já q não teve espaço pra colocar).</li>
-<li><span class="highlight"><s>Ignorar/Liberar Jogador:</s></span> <s>Agora será possível ignorar ou liberar um jogador clicando no perfil dele dentro da sala</s>(não funcionou-cancelado).</li>
         </ul>
-    </div>
+    </div
+<div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif;"></div>
+
 
 <div class="upcoming-features">
         <h2>Agora contém várias versões.</h2>
@@ -451,10 +452,10 @@
         function updateCountdown() {
             const now = new Date();
             const targetTime = new Date();
-            targetTime.setHours(14, 0, 0, 0);  // Definir para 14:00
+            targetTime.setHours(14, 0, 0, 0);  
 
             if (now >= targetTime) {
-                targetTime.setDate(targetTime.getDate() + 1);  // Se já passou das 14:00, vai para o próximo dia
+                targetTime.setDate(targetTime.getDate() + 1);  
             }
 
             const remainingTime = targetTime - now;
@@ -473,7 +474,7 @@
         }
 
         const interval = setInterval(updateCountdown, 1000);
-        updateCountdown();  // Chama uma vez para exibir o cronômetro imediatamente
+        updateCountdown();
     }
 
     window.onload = startCountdown;
