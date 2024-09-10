@@ -229,9 +229,8 @@
 
     <p>Aqui está o novo mod do Gartic com funções desbloqueadas e habilitadas.</p>
     <p>SITE DEFINITIVO. Pois, o anterior do blogger era bagunçado.</p>
-    <div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif; font-weight: bold;"></div>
         <div class="version">
-        <h2>Versão Pública (Final) 5.50</h2>
+        <h2>Versão Pública (Final) 6.0</h2>
         <h3>Principais Mudanças:</h3>
         <ul>
             <li><span class="highlight">1. Possibilidade de entrar em qualquer sala oficial:</span> Escolha qualquer sala para jogar, também é possível entrar via link. Desbloqueado.</li>
@@ -261,6 +260,9 @@
             <li>"Saiu do jogo" trocado para "Saiu da sala".</li>
             <li>GTC salas em opções serve apenas para ver. Futuras atualizações podem ativá-lo.</li>
            <li>Integração com o Site Gartic em Opções esperando 5s, é possível ver rank de cada tema.</li>
+           <li>Mostra dificuldade no aviso de confirmação Facíl, Médio e Difícil.</li>
+           <li>Mostra criador da sala no aviso de confirmação</li>
+           <li>Removido Integração com Facebook (botão de logar com facebook).</li>
         </ul>
     </div>
 
@@ -300,18 +302,18 @@
     </div>
 
     <div class="download-buttons" id="blue-buttons">
-        <h2>Download Mod Azul Original:</h2>
-        <a href="https://www.mediafire.com/file/wwaecd6g1eck5pv/GarticModOriginal5.50Final.apk/file" class="blue-btn">Baixar</a>
+        <h2>Download Mod Azul Original 6.0:</h2>
+        <a href="https://www.mediafire.com/file/ym4gb4dxbklgp2c/GarticModOriginal6.0Final.apk/file" class="blue-btn">Baixar</a>
     </div>
 
     <div class="download-buttons" id="purple-buttons">
-        <h2>Download Mod Roxo:</h2>
-        <a href="https://www.mediafire.com/file/4fl2eldu24n6g6p/GarticModRoxo5.50Final.apk/file" class="purple-btn">Baixar</a>
+        <h2>Download Mod Roxo 6.0:</h2>
+        <a href="https://www.mediafire.com/file/nastvww2qf8sczy/GarticModPreto6.0Final.apk/file" class="purple-btn">Baixar</a>
     </div>
 
     <div class="download-buttons" id="black-buttons">
-        <h2>Download Mod Preto:</h2>
-        <a href="https://www.mediafire.com/file/aa4gn24sliaajdv/GarticModPreto5.50Final.apk/file" class="black-btn">Baixar</a>
+        <h2>Download Mod Preto 6.0:</h2>
+        <a href="https://www.mediafire.com/file/nastvww2qf8sczy/GarticModPreto6.0Final.apk/file" class="black-btn">Baixar</a>
     </div>
 
     <div id="popup1" class="popup">
@@ -364,26 +366,19 @@
     </div>
 
 <div class="upcoming-features">
-        <h2>O que mudou na versão 5.50?</h2>
+        <h2>O que mudou na versão 6.0?</h2>
 
-<h3>Novidades e Correções/Remoções:</h3>
+<h3>Novidades:</h3>
 <ul>
-    <li><strong>Mostra dificuldade no aviso de confirmação</strong> Fácil, Médio e Difícil.</li>
-    <li><strong>Mostra criador da sala no aviso de confirmação</strong> em oficiais: Gartic, em criadas: de acordo com quem criou.</li>
-    <li><strong>Mais frases de intervalo que me mandaram</strong> quiser me sugerir mais, me chame no Discord: Intocado</li>
-    <li><strong>Créditos do mod com outro nome</strong> na inicialização agora é GarticMod by Intocado</li>
-    <li><strong>Removido Integração com Facebook</strong> Onde incomodava o botão de facebook sem utilidade, ja que ficou sem atualizar os serviços do facebook.</li>
+    <li><strong>Próximos a desenhar:</strong> Possível ver os próximos a desenhar em cima da barra do tempo do desenho.</li>
 </ul>
     </div>
   
 <div class="upcoming-features">
-        <h2>Próxima atualização, daqui a pouco!!!</h2>
+        <h2></h2>
         <ul>
-            <li><span class="highlight">Próximos a desenhar:</span> Possível ver os próximos a desenhar na tela do desenho (já q não teve espaço pra colocar).</li>
         </ul>
     </div>
-<div id="countdown2" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif; font-weight: bold;"></div>
-
 
 <div class="upcoming-features">
         <h2>Agora contém várias versões.</h2>
@@ -446,46 +441,7 @@
         document.getElementById(`${color}-screenshots`).style.display = 'block';
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
-    function startCountdown() {
-        const countdownElement = document.getElementById("countdown");
-         const countdownElement2 = document.getElementById("countdown2");
-          const countdownElement3 = document.getElementById("countdown3");
-
-        function updateCountdown() {
-            const now = new Date();
-            const targetTime = new Date();
-            targetTime.setHours(14, 0, 0, 0);  
-
-            if (now >= targetTime) {
-                targetTime.setDate(targetTime.getDate() + 1);  
-            }
-
-            const remainingTime = targetTime - now;
-
-            const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
-            const seconds = Math.floor((remainingTime / 1000) % 60);
-
-            countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
-            countdownElement2.textContent = `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
-            countdownElement3.textContent = `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
-
-            if (remainingTime <= 0) {
-                clearInterval(interval);
-                countdownElement.textContent = "O lançamento já começou! veja acima";
-                                countdownElement2.textContent = "O lançamento já começou! veja acima";
-                countdownElement3.textContent = "O lançamento já começou! veja acima";
-
-            }
-        }
-
-        const interval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    }
-
-    window.onload = startCountdown;
 </script>
-        <p><strong>Próx Atualização 10/09</strong> ↓↓↓↓</p>
+        <p><strong>Atualização 10/09  Versão 6.0</strong> Veja acima</p>
 </body>
-<div id="countdown3" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif; font-weight: bold;"></div>
 </html>
