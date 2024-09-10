@@ -229,7 +229,7 @@
 
     <p>Aqui está o novo mod do Gartic com funções desbloqueadas e habilitadas.</p>
     <p>SITE DEFINITIVO. Pois, o anterior do blogger era bagunçado.</p>
-    <div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif;"></div>
+    <div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif; font-weight: bold;"></div>
         <div class="version">
         <h2>Versão Pública (Final) 5.50</h2>
         <h3>Principais Mudanças:</h3>
@@ -381,8 +381,8 @@
         <ul>
             <li><span class="highlight">Próximos a desenhar:</span> Possível ver os próximos a desenhar na tela do desenho (já q não teve espaço pra colocar).</li>
         </ul>
-    </div
-<div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif;"></div>
+    </div>
+<div id="countdown2" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif; font-weight: bold;"></div>
 
 
 <div class="upcoming-features">
@@ -448,6 +448,8 @@
     }
     function startCountdown() {
         const countdownElement = document.getElementById("countdown");
+         const countdownElement2 = document.getElementById("countdown2");
+          const countdownElement3 = document.getElementById("countdown3");
 
         function updateCountdown() {
             const now = new Date();
@@ -464,12 +466,16 @@
             const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
             const seconds = Math.floor((remainingTime / 1000) % 60);
 
-            countdownElement.textContent = 
-                `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
+            countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
+            countdownElement2.textContent = `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
+            countdownElement3.textContent = `${hours}h ${minutes}m ${seconds}s restantes até o lançamento da versão 6.0`;
 
             if (remainingTime <= 0) {
                 clearInterval(interval);
                 countdownElement.textContent = "O lançamento já começou! veja acima";
+                                countdownElement2.textContent = "O lançamento já começou! veja acima";
+                countdownElement3.textContent = "O lançamento já começou! veja acima";
+
             }
         }
 
@@ -481,5 +487,5 @@
 </script>
         <p><strong>Próx Atualização 10/09</strong> ↓↓↓↓</p>
 </body>
-<div id="countdown" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif;"></div>
+<div id="countdown3" style="margin-top: 20px; font-size: 1.5em; font-family: 'Roboto', sans-serif; font-weight: bold;"></div>
 </html>
