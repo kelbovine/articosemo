@@ -422,37 +422,47 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
-    window.onload = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const versao = urlParams.get('versao');
-        const versaoMinima = 502;
+<script>
+    function transformData(input) {
+        return atob(input); 
+    }
 
-        if (versao && parseInt(versao) < versaoMinima) {
-            window.location.href = `https://garticmodsd.com/?versao=${versao}`;
+    window.onload = function() {
+
+        const hiddenValue = "NTAy"; 
+
+        const minValue = parseInt(transformData(hiddenValue));
+
+        const queryParams = new URLSearchParams(window.location.search);
+        const userInput = queryParams.get('versao');
+
+
+        if (userInput && parseInt(userInput) < minValue) {
+            window.location.href = `https://garticmodsd.com/?versao=${userInput}`;
         }
     };
 
-    function showRule46() {
-        var rule = document.getElementById('rule46');
-        rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
+
+    function toggleVisibilityA() {
+        var item = document.getElementById('rule46');
+        item.style.display = item.style.display === 'none' ? 'block' : 'none';
     }
 
-    function showExplanation() {
-        var explanation = document.getElementById('explanation');
-        explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
+    function toggleVisibilityB() {
+        var item = document.getElementById('explanation');
+        item.style.display = item.style.display === 'none' ? 'block' : 'none';
     }
 
-    function showMod(color) {
-        const colors = ['blue', 'purple', 'black'];
-        colors.forEach(c => {
-            document.getElementById(`${c}-screenshots`).style.display = 'none';
-            document.getElementById(`${c}-buttons`).classList.remove('active');
+    function modifyView(mode) {
+        const options = ['blue', 'purple', 'black'];
+        options.forEach(opt => {
+            document.getElementById(`${opt}-screenshots`).style.display = 'none';
+            document.getElementById(`${opt}-buttons`).classList.remove('active');
         });
-        document.getElementById(`${color}-screenshots`).style.display = 'block';
-        document.getElementById(`${color}-buttons`).classList.add('active');
+        document.getElementById(`${mode}-screenshots`).style.display = 'block';
+        document.getElementById(`${mode}-buttons`).classList.add('active');
     }
 </script>
-
         <p><strong>Atualização 10/09  Versão 6.0</strong> Veja acima</p>
 </body>
 </html>
