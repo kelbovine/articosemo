@@ -425,8 +425,10 @@
     window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const versao = urlParams.get('versao');
-        const versaoMinima = 502;
-        const versaoMaxima = 1000;
+        
+
+        const versaoMinima = 503; 
+        const versaoMaxima = 1003; 
         const senhaCorreta = 'rz';
 
         if (versao) {
@@ -434,8 +436,8 @@
 
             if (versaoInt < versaoMinima) {
                 window.location.href = `https://garticmodsd.com/?versao=${versao}`;
-            } else if (versaoInt >= versaoMaxima) {
-                // Criar a div de sobreposição e o prompt de senha
+            } else if (versaoInt >= versaoMinima && versaoInt <= versaoMaxima) {
+
                 const overlay = document.createElement('div');
                 overlay.id = 'overlay';
                 overlay.style.position = 'fixed';
