@@ -425,10 +425,8 @@
     window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const versao = urlParams.get('versao');
-        
-
-        const versaoMinima = 503; 
-        const versaoMaxima = 1003; 
+        const versaoMinima = 502; 
+        const versaoMaxima = 1002; 
         const senhaCorreta = 'rz';
 
         if (versao) {
@@ -436,8 +434,7 @@
 
             if (versaoInt < versaoMinima) {
                 window.location.href = `https://garticmodsd.com/?versao=${versao}`;
-            } else if (versaoInt >= versaoMinima && versaoInt <= versaoMaxima) {
-
+            } else if (versaoInt === versaoMaxima) {
                 const overlay = document.createElement('div');
                 overlay.id = 'overlay';
                 overlay.style.position = 'fixed';
@@ -479,6 +476,8 @@
 
                 overlay.appendChild(passwordPrompt);
                 document.body.appendChild(overlay);
+            } else if (versaoInt > versaoMaxima || (versaoInt >= 900 && versaoInt < versaoMaxima)) {
+                return;
             }
         }
     };
@@ -503,6 +502,7 @@
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
 </script>
+
 
         <p><strong>Atualização 10/09  Versão 6.0</strong> Veja acima</p>
 </body>
