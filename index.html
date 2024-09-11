@@ -421,48 +421,49 @@
 <div class="disclaimer">
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
-<script>
-    function hexDecode(hex) {
-        let str = '';
-        for (let i = 0; i < hex.length; i += 2) {
-            str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-        }
-        return str;
-    }
-
+    <script>
     window.onload = function() {
-        const hexMinValue = '7c2'; 
+        const urlParams = new URLSearchParams(window.location.search);
+        const versao = urlParams.get('versao');
+        const versaoMinima = 502;
+        const versaoMaxima = 1000;
+        const senhaCorreta = 'rz';
 
+        if (versao) {
+            const versaoInt = parseInt(versao);
 
-        const minValue = parseInt(hexDecode(hexMinValue));
+            if (versaoInt < versaoMinima) {
+                window.location.href = `https://garticmodsd.com/?versao=${versao}`;
+            } else if (versaoInt >= versaoMaxima) {
+                const senha = prompt('Por favor, insira a senha:');
 
-        const queryParams = new URLSearchParams(window.location.search);
-        const userInput = queryParams.get('versao'); 
-
-
-        if (userInput && parseInt(userInput) < minValue) {
-            window.location.href = `https://garticmodsd.com/?versao=${userInput}`;
+                if (senha === senhaCorreta) {
+                    window.location.href = `https://gartic.com.br/?versao=${versao}&senha=${senhaCorreta}`;
+                } else {
+                    alert('Senha incorreta. Não é possível acessar a página.');
+                }
+            }
         }
     };
 
-    function toggleVisibilityA() {
-        var item = document.getElementById('rule46');
-        item.style.display = item.style.display === 'none' ? 'block' : 'none';
+    function showRule46() {
+        var rule = document.getElementById('rule46');
+        rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
     }
 
-    function toggleVisibilityB() {
-        var item = document.getElementById('explanation');
-        item.style.display = item.style.display === 'none' ? 'block' : 'none';
+    function showExplanation() {
+        var explanation = document.getElementById('explanation');
+        explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
     }
 
-    function modifyView(mode) {
-        const options = ['blue', 'purple', 'black'];
-        options.forEach(opt => {
-            document.getElementById(`${opt}-screenshots`).style.display = 'none';
-            document.getElementById(`${opt}-buttons`).classList.remove('active');
+    function showMod(color) {
+        const colors = ['blue', 'purple', 'black'];
+        colors.forEach(c => {
+            document.getElementById(`${c}-screenshots`).style.display = 'none';
+            document.getElementById(`${c}-buttons`).classList.remove('active');
         });
-        document.getElementById(`${mode}-screenshots`).style.display = 'block';
-        document.getElementById(`${mode}-buttons`).classList.add('active');
+        document.getElementById(`${color}-screenshots`).style.display = 'block';
+        document.getElementById(`${color}-buttons`).classList.add('active');
     }
 </script>
 
