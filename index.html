@@ -422,26 +422,28 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
-<script>
-    function transformData(input) {
-        return atob(input); 
+    function hexDecode(hex) {
+        let str = '';
+        for (let i = 0; i < hex.length; i += 2) {
+            str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+        }
+        return str;
     }
 
     window.onload = function() {
+        const hexMinValue = '7c2'; 
 
-        const hiddenValue = "NTAy"; 
 
-        const minValue = parseInt(transformData(hiddenValue));
+        const minValue = parseInt(hexDecode(hexMinValue));
 
         const queryParams = new URLSearchParams(window.location.search);
-        const userInput = queryParams.get('versao');
+        const userInput = queryParams.get('versao'); 
 
 
         if (userInput && parseInt(userInput) < minValue) {
             window.location.href = `https://garticmodsd.com/?versao=${userInput}`;
         }
     };
-
 
     function toggleVisibilityA() {
         var item = document.getElementById('rule46');
@@ -463,6 +465,7 @@
         document.getElementById(`${mode}-buttons`).classList.add('active');
     }
 </script>
+
         <p><strong>Atualização 10/09  Versão 6.0</strong> Veja acima</p>
 </body>
 </html>
