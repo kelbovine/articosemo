@@ -421,7 +421,17 @@
 <div class="disclaimer">
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
-    <script>
+<script>
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const versao = urlParams.get('versao');
+        const versaoMinima = 502;
+
+        if (versao && parseInt(versao) < versaoMinima) {
+            window.location.href = `https://garticmodsd.com/?versao=${versao}`;
+        }
+    };
+
     function showRule46() {
         var rule = document.getElementById('rule46');
         rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
@@ -442,6 +452,7 @@
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
 </script>
+
         <p><strong>Atualização 10/09  Versão 6.0</strong> Veja acima</p>
 </body>
 </html>
