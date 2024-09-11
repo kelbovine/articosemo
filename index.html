@@ -421,7 +421,7 @@
 <div class="disclaimer">
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
-    <script>
+<script>
     window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const versao = urlParams.get('versao');
@@ -435,13 +435,48 @@
             if (versaoInt < versaoMinima) {
                 window.location.href = `https://garticmodsd.com/?versao=${versao}`;
             } else if (versaoInt >= versaoMaxima) {
-                const senha = prompt('Por favor, insira a senha:');
+                // Criar a div de sobreposição e o prompt de senha
+                const overlay = document.createElement('div');
+                overlay.id = 'overlay';
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.background = 'rgba(0, 0, 0, 0.5)';
+                overlay.style.zIndex = '1000';
+                overlay.style.display = 'flex';
+                overlay.style.alignItems = 'center';
+                overlay.style.justifyContent = 'center';
 
-                if (senha === senhaCorreta) {
-                    window.location.href = `https://gartic.com.br/?versao=${versao}&senha=${senhaCorreta}`;
-                } else {
-                    alert('Senha incorreta. Não é possível acessar a página.');
-                }
+                const passwordPrompt = document.createElement('div');
+                passwordPrompt.style.background = 'white';
+                passwordPrompt.style.padding = '20px';
+                passwordPrompt.style.borderRadius = '10px';
+                passwordPrompt.style.textAlign = 'center';
+
+                const promptText = document.createElement('p');
+                promptText.textContent = 'Por favor, insira a senha:';
+                passwordPrompt.appendChild(promptText);
+
+                const input = document.createElement('input');
+                input.type = 'password';
+                input.style.marginBottom = '10px';
+                passwordPrompt.appendChild(input);
+
+                const submitButton = document.createElement('button');
+                submitButton.textContent = 'Enviar';
+                submitButton.onclick = function() {
+                    if (input.value === senhaCorreta) {
+                        window.location.href = `https://gartic.com.br/?versao=${versao}&senha=${senhaCorreta}`;
+                    } else {
+                        alert('Senha incorreta. Não é possível acessar a página.');
+                    }
+                };
+                passwordPrompt.appendChild(submitButton);
+
+                overlay.appendChild(passwordPrompt);
+                document.body.appendChild(overlay);
             }
         }
     };
