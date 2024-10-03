@@ -477,23 +477,7 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
- function verificarUrl() {
-            const url = window.location.href;
-            const hasBaixar = url.includes('?baixar') || url.includes('#?baixar') || url.includes('#!?baixar');
 
-            if (hasBaixar) {
-                // Limpa a página completamente e escreve o novo conteúdo
-                document.open();  // Abre o documento para escrita
-                document.write(`
-                    <div id="download-container" class="download-buttons">
-                        <button id="mod-dark">Baixar Mod Dark</button>
-                        <button id="mod-purple">Baixar Mod Purple</button>
-                        <button id="mod-blue">Baixar Mod Blue</button>
-                    </div>
-                `);
-                document.close();  // Fecha o documento para renderização
-            }
-        }
 
     function showRule46() {
         var rule = document.getElementById('rule46');
@@ -514,9 +498,6 @@
         document.getElementById(`${color}-screenshots`).style.display = 'block';
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
-
-        // Chama a função ao carregar a página
-        window.onload = verificarUrl;
     </script>
     <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
       <p><strong>SE ENCONTRAR UM BUG ME CHAME NO DISCORD IMEDIATAMENTE </strong> Discord user: Intocado</p>
