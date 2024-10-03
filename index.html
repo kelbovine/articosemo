@@ -486,14 +486,19 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
- // Função para verificar se o parâmetro ?baixar ou #?baixar está presente na URL
+  // Função para verificar se o parâmetro ?baixar ou #?baixar está presente na URL
         function verificarUrl() {
             const url = window.location.href;
             const hasBaixar = url.includes('?baixar') || url.includes('#?baixar') || url.includes('#!?baixar');
 
             if (hasBaixar) {
-                // Exibe os botões de download
+                // Esconde o conteúdo normal da página e mostra apenas os botões de download
+                document.getElementById('content').style.display = 'none';
                 document.getElementById('download-container').classList.add('visible');
+                document.body.style.display = 'block'; // Mostra o body apenas quando a URL tem o parâmetro ?baixar
+            } else {
+                // Se a URL não tiver o parâmetro ?baixar, mostra o conteúdo normal
+                document.body.style.display = 'block';
             }
         }
 
