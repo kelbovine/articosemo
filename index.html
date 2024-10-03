@@ -276,7 +276,7 @@
 <a href="https://replygtc.onrender.com/" style="color: #450076; text-decoration: underline;">SITE DE RESPOSTAS COM FILTROS DE BUSCA</a>
     
         <div class="version">
-        <h2>Versão Pública (Final) 7.5 Atualização 30/09 </h2>
+        <h2>Versão Pública (Final) 7.8 Atualização 03/09 </h2>
         <h3>Principais Mudanças:</h3>
         <ul>
             <li><span class="highlight">1. Possibilidade de entrar em qualquer sala oficial:</span> Escolha qualquer sala para jogar, também é possível entrar via link. Desbloqueado.</li>
@@ -415,28 +415,29 @@
 
 <div class="upcoming-features">
     <h2>O que mudou nessa versão 7.5? Att complementar</h2>
-        <ul>
-       <li><span class="highlight">Criar conta ficou mais prático:</span> apenas com nick, email e senha. já cria a conta</li>
-        <li><span class="highlight">Criar sala também:</span> todas as info em unica página para criar sala.</li>
-      <li><span class="highlight">Corrigido o bug na tela do vencedor com teclado aberto:</span> estavam desalinhados.</li>
+    <ul>
+        <li><span class="highlight">Criar conta ficou mais prático:</span> apenas com nick, email e senha. já cria a conta</li>
+        <li><span class="highlight">Criar sala também:</span> todas as info em única página para criar sala.</li>
+        <li><span class="highlight">Corrigido o bug na tela do vencedor com teclado aberto:</span> estavam desalinhados.</li>
+    </ul>
+</div>
 
-                    </ul>
-                         </div>
-        <h2>O que mudou nessa versão 7.0+? </h2>
-        <ul>
-            <li><span class="highlight">Contador de jogando agora, o mesmo do site:</span> na tela inicial.</li>
-            <li><span class="highlight">Mostra os nomes dos jogadores na tela de confirmação de sala:</span> mostra usando os layouts do app mesmo.</li>
-          <li><span class="highlight">Apps renomeados de acordo com a cor que usa:</span> no menu de aplicativos ficará exemplo GarticPurple.</li>
-        </ul>
-    </div>
+<div class="upcoming-features">
+    <h2>O que mudou nessa versão 7.0+?</h2>
+    <ul>
+        <li><span class="highlight">Contador de jogando agora, o mesmo do site:</span> na tela inicial.</li>
+        <li><span class="highlight">Mostra os nomes dos jogadores na tela de confirmação de sala:</span> mostra usando os layouts do app mesmo.</li>
+        <li><span class="highlight">Apps renomeados de acordo com a cor que usa:</span> no menu de aplicativos ficará exemplo GarticPurple.</li>
+    </ul>
+</div>
 
-    <div class="upcoming-features">
-        <h2>Próxima atualização em primeira semana de outubro Versão 8.0</h2>
-        <ul>
-            <li><span class="highlight">Novas cores:</span> sim, ainda pendente já que os jogadores ^ deu trabalho.</li>
-            <li><span class="highlight">Mostrar lista de respostas dos temas vet:</span> terá um botão de abrir lista ao lado do botão info (i).</li>
-        </ul>
-    </div>
+<div class="upcoming-features">
+    <h2>Próxima atualização em primeira semana de outubro Versão 8.0</h2>
+    <ul>
+        <li><span class="highlight">Novas cores:</span> sim, ainda pendente já que os jogadores ^ deu trabalho.</li>
+        <li><span class="highlight">Mostrar lista de respostas dos temas vet:</span> terá um botão de abrir lista ao lado do botão info (i).</li>
+    </ul>
+</div>
 
 <div class="warnings">
     <h2>⚠️ ATENÇÃO REDOBRADA</h2>
@@ -454,7 +455,7 @@
     É porque para evitar entrar em uma sala cheia através de um bug, o Gartic colocou um limite de tentativas de acesso ao clicar no botão de entrada, tanto no aplicativo normal/mod quanto no site de PC. Alguns meses atrás, havia bots que entravam e enchiam as salas, mesmo as cheias, tanto em contas não-cadastradas quanto em salas criadas. Se alguém fizer isso, clicando bastante em entrar e a sala estiver cheia, será bloqueado, e o bloqueio dura de 30 a 40 minutos antes de retornar ao normal para jogar.
 </div>
 
-<!-- Container para a Regra 46 -->
+
 <div id="rule46" style="display:none; margin-top: 10px; background-color: #f8d7da; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px;">
     <strong>Regra 46:</strong> O usuário que fizer o uso de bots, hacks ou quaisquer outros meios automáticos, sob qualquer circunstância dentro ou fora do jogo, estará sujeito à perda imediata da conta sem aviso prévio (incluindo suas contas vinculadas).
 </div>
@@ -473,69 +474,6 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
-    window.onload = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const versao = urlParams.get('versao');
-        const versaoMinima = 502; 
-        const versaoMaxima = 1002; 
-        const senhaCorreta = 'rz';
-
-        if (versao) {
-            const versaoInt = parseInt(versao);
-
-            if (versaoInt <= 400) {
-                window.location.href = `https://garticmodsd.com/?versao=${versao}`;
-            } else if (versaoInt > 400 && versaoInt < versaoMinima) {
-                window.location.href = `https://garticmodsd.com/?versao=${versao}`;
-            } else if (versaoInt >= 900 && versaoInt <= 1001) {
-                const overlay = document.createElement('div');
-                overlay.id = 'overlay';
-                overlay.style.position = 'fixed';
-                overlay.style.top = '0';
-                overlay.style.left = '0';
-                overlay.style.width = '100%';
-                overlay.style.height = '100%';
-                overlay.style.background = 'rgba(0, 0, 0, 0.5)';
-                overlay.style.zIndex = '1000';
-                overlay.style.display = 'flex';
-                overlay.style.alignItems = 'center';
-                overlay.style.justifyContent = 'center';
-
-                const passwordPrompt = document.createElement('div');
-                passwordPrompt.style.background = 'white';
-                passwordPrompt.style.padding = '20px';
-                passwordPrompt.style.borderRadius = '10px';
-                passwordPrompt.style.textAlign = 'center';
-
-                const promptText = document.createElement('p');
-                promptText.textContent = 'Por favor, insira a senha:';
-                passwordPrompt.appendChild(promptText);
-
-                const input = document.createElement('input');
-                input.type = 'password';
-                input.style.marginBottom = '10px';
-                passwordPrompt.appendChild(input);
-
-                const submitButton = document.createElement('button');
-                submitButton.textContent = 'Enviar';
-                submitButton.onclick = function() {
-                    if (input.value === senhaCorreta) {
-                        window.location.href = `https://gartic.com.br/?versao=${versao}&senha=${senhaCorreta}`;
-                    } else {
-                        alert('Senha incorreta. Não é possível acessar a página.');
-                    }
-                };
-                passwordPrompt.appendChild(submitButton);
-
-                overlay.appendChild(passwordPrompt);
-                document.body.appendChild(overlay);
-            } else if (versaoInt >= versaoMinima && versaoInt <= versaoMaxima) {
-                return;
-            } else if (versaoInt > versaoMaxima) {
-                return;
-            }
-        }
-    };
 
     function showRule46() {
         var rule = document.getElementById('rule46');
@@ -556,11 +494,63 @@
         document.getElementById(`${color}-screenshots`).style.display = 'block';
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+
+    if (window.location.hash === "#baixar") {
+
+        document.body.innerHTML = '';
+
+
+        let container = document.createElement("div");
+        container.style.textAlign = "center"; 
+        container.style.marginTop = "50px"; 
+
+
+        let downloadButtonsHTML = `
+            <div class="download-buttons" id="blue-buttons">
+                <h2>Download Mod Blue 7.8:</h2>
+                <a href="https://github.com/kepplinho/gtcm/releases/nload/atual2/GarticBlue7.5.1Final.apk" class="blue-btn">Baixar</a>
+            </div>
+
+            <div class="download-buttons" id="purple-buttons">
+                <h2>Download Mod Purple 7.8:</h2>
+                <a href="https://github.com/kepplinho/gtcm/releases/downl/atual2/GarticDark7.5.1Final.apk" class="purple-btn">Baixar</a>
+            </div>
+
+            <div class="download-buttons" id="black-buttons">
+                <h2>Download Mod Dark 7.8:</h2>
+                <a href="https://github.com/kepplinho/gtcm/releases/downd/atual2/GarticPurple7.5.1Final.apk" class="black-btn">Baixar</a>
+            </div>
+        `;
+
+
+        container.innerHTML = downloadButtonsHTML;
+        
+
+        document.body.appendChild(container);
+
+        // Personaliza os estilos dos botões
+        document.querySelectorAll('.download-buttons a').forEach(button => {
+            button.style.display = 'inline-block';
+            button.style.padding = '10px 20px';
+            button.style.margin = '10px';
+            button.style.color = '#fff';
+            button.style.textDecoration = 'none';
+            button.style.borderRadius = '5px';
+        });
+
+
+        document.querySelector('.blue-btn').style.backgroundColor = '#007bff'; 
+        document.querySelector('.purple-btn').style.backgroundColor = '#6f42c1';
+        document.querySelector('.black-btn').style.backgroundColor = '#343a40'; 
+    }
+});
 </script>
 
-        <p><strong> Atualização 30/09 </strong> 7.5 ^</p>
+        <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
       <p><strong>SE ENCONTRAR UM BUG ME CHAME NO DISCORD IMEDIATAMENTE </strong> Discord user: Intocado</p>
-    Total de downloads apartir de 7.2: <img src="https://img.shields.io/github/downloads/kepplinho/gtcm/total.svg" alt="GitHub Downloads">
+    Total de downloads apartir de 7.0: <img src="https://img.shields.io/github/downloads/kepplinho/gtcm/total.svg" alt="GitHub Downloads">
 
 
 </body>
