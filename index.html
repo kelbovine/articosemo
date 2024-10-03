@@ -482,14 +482,16 @@
             const hasBaixar = url.includes('?baixar') || url.includes('#?baixar') || url.includes('#!?baixar');
 
             if (hasBaixar) {
-                // Substitui o conteúdo do body com os botões de download
-                document.body.innerHTML = `
+                // Limpa a página completamente e escreve o novo conteúdo
+                document.open();  // Abre o documento para escrita
+                document.write(`
                     <div id="download-container" class="download-buttons">
                         <button id="mod-dark">Baixar Mod Dark</button>
                         <button id="mod-purple">Baixar Mod Purple</button>
                         <button id="mod-blue">Baixar Mod Blue</button>
                     </div>
-                `;
+                `);
+                document.close();  // Fecha o documento para renderização
             }
         }
 
