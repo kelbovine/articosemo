@@ -474,101 +474,30 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
-    // Função para alternar a visibilidade de 'rule46'
-    function showRule46() {
-        var rule = document.getElementById('rule46');
-        rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
-    }
+// Função principal executada quando o conteúdo da página estiver carregado
+        document.addEventListener("DOMContentLoaded", function () {
+            // Verifica se a URL contém o parâmetro `?baixar`
+            if (window.location.search.includes("baixar")) {
+                console.log("Parâmetro ?baixar detectado na URL.");
 
-    // Função para alternar a visibilidade de 'explanation'
-    function showExplanation() {
-        var explanation = document.getElementById('explanation');
-        explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
-    }
+                // Altera o título da página
+                document.title = "Baixar rápido";
 
-    // Função para exibir apenas um conjunto de botões e ocultar os outros
-    function showMod(color) {
-        const colors = ['blue', 'purple', 'black'];
-        colors.forEach(c => {
-            document.getElementById(`${c}-screenshots`).style.display = 'none';
-            document.getElementById(`${c}-buttons`).classList.remove('active');
-        });
-        document.getElementById(`${color}-screenshots`).style.display = 'block';
-        document.getElementById(`${color}-buttons`).classList.add('active');
-    }
+                // Seleciona os elementos dos botões
+                const blueButtons = document.getElementById("blue-buttons");
+                const purpleButtons = document.getElementById("purple-buttons");
+                const blackButtons = document.getElementById("black-buttons");
 
-    // Função para manipular a página quando o parâmetro '?baixar' está presente
-    document.addEventListener("DOMContentLoaded", function () {
-        if (window.location.search.includes("baixar")) {
-            console.log("Parâmetro ?baixar detectado na URL.");
-
-            // Altera o título da página
-            document.title = "Baixar rápido";
-
-            // Seleciona apenas os botões desejados
-            const blueButtons = document.getElementById("blue-buttons");
-            const purpleButtons = document.getElementById("purple-buttons");
-            const blackButtons = document.getElementById("black-buttons");
-
-            if (!blueButtons && !purpleButtons && !blackButtons) {
-                console.error("Nenhum dos elementos de botões foi encontrado. Certifique-se de que os IDs estão corretos.");
-                return; // Se não encontrar nenhum dos botões, não faça nada
+                // Adiciona a classe 'active' para exibir os botões
+                blueButtons.classList.add("active");
+                purpleButtons.classList.add("active");
+                blackButtons.classList.add("active");
+            } else {
+                // Se não tiver o parâmetro ?baixar, ocultar o conteúdo
+                document.body.innerHTML = "<h1>Apenas acessível via link de download.</h1>";
             }
-
-            // Cria um novo contêiner para os botões
-            const container = document.createElement("div");
-            container.style.display = "flex";
-            container.style.flexDirection = "column";
-            container.style.alignItems = "center";
-
-            // Adiciona apenas os botões ao novo contêiner, se existirem
-            if (blueButtons) container.appendChild(blueButtons);
-            if (purpleButtons) container.appendChild(purpleButtons);
-            if (blackButtons) container.appendChild(blackButtons);
-
-            console.log("Botões adicionados ao contêiner.");
-
-            // Remove todo o conteúdo anterior do body, se existir
-            document.body.innerHTML = "";
-
-            // Adiciona o novo contêiner ao body
-            document.body.appendChild(container);
-
-            // Estilo básico para os botões
-            const styles = `
-                .download-buttons {
-                    margin: 20px;
-                    padding: 10px;
-                }
-                .download-buttons h2 {
-                    text-align: center;
-                    margin-bottom: 10px;
-                }
-                .blue-btn, .purple-btn, .black-btn {
-                    display: inline-block;
-                    padding: 10px 20px;
-                    margin: 5px;
-                    color: #fff;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    font-size: 16px;
-                }
-                .blue-btn { background-color: #007bff; }
-                .purple-btn { background-color: #6f42c1; }
-                .black-btn { background-color: #343a40; }
-                .active { font-weight: bold; }
-            `;
-
-            // Adiciona o estilo ao head da página
-            const styleSheet = document.createElement("style");
-            styleSheet.type = "text/css";
-            styleSheet.innerText = styles;
-            document.head.appendChild(styleSheet);
-
-            console.log("Estilos adicionados à página.");
-        }
-    });
-</script>
+        });
+    </script>
     <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
       <p><strong>SE ENCONTRAR UM BUG ME CHAME NO DISCORD IMEDIATAMENTE </strong> Discord user: Intocado</p>
     Total de downloads apartir de 7.0: <img src="https://img.shields.io/github/downloads/kepplinho/gtcm/total.svg" alt="GitHub Downloads">
