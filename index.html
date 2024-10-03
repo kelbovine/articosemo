@@ -500,6 +500,8 @@
     // Função para manipular a página quando o parâmetro '?baixar' está presente
     document.addEventListener("DOMContentLoaded", function () {
         if (window.location.search.includes("baixar")) {
+            console.log("Parâmetro ?baixar detectado na URL.");
+
             // Altera o título da página
             document.title = "Baixar rápido";
 
@@ -508,18 +510,25 @@
             const purpleButtons = document.getElementById("purple-buttons");
             const blackButtons = document.getElementById("black-buttons");
 
+            if (!blueButtons && !purpleButtons && !blackButtons) {
+                console.error("Nenhum dos elementos de botões foi encontrado. Certifique-se de que os IDs estão corretos.");
+                return; // Se não encontrar nenhum dos botões, não faça nada
+            }
+
             // Cria um novo contêiner para os botões
             const container = document.createElement("div");
             container.style.display = "flex";
             container.style.flexDirection = "column";
             container.style.alignItems = "center";
 
-            // Adiciona apenas os botões ao novo contêiner
+            // Adiciona apenas os botões ao novo contêiner, se existirem
             if (blueButtons) container.appendChild(blueButtons);
             if (purpleButtons) container.appendChild(purpleButtons);
             if (blackButtons) container.appendChild(blackButtons);
 
-            // Remove todo o conteúdo anterior do body
+            console.log("Botões adicionados ao contêiner.");
+
+            // Remove todo o conteúdo anterior do body, se existir
             document.body.innerHTML = "";
 
             // Adiciona o novo contêiner ao body
@@ -555,11 +564,12 @@
             styleSheet.type = "text/css";
             styleSheet.innerText = styles;
             document.head.appendChild(styleSheet);
+
+            console.log("Estilos adicionados à página.");
         }
     });
 </script>
-
-        <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
+    <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
       <p><strong>SE ENCONTRAR UM BUG ME CHAME NO DISCORD IMEDIATAMENTE </strong> Discord user: Intocado</p>
     Total de downloads apartir de 7.0: <img src="https://img.shields.io/github/downloads/kepplinho/gtcm/total.svg" alt="GitHub Downloads">
 
