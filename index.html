@@ -207,6 +207,10 @@
             opacity: 0.8;
         }
 
+        .visible {
+            display: block; 
+        }
+
         .warnings {
             margin-top: 40px;
             padding: 20px;
@@ -469,34 +473,52 @@
     <p><strong>Recomendação:</strong> Para maior segurança, você pode <a href="https://www.virustotal.com" target="_blank">verificar os arquivos baixados no VirusTotal</a> antes de instalar. Daí você verá que só tem 3 por causa da assinatura (key) genérica.</p>
 </div>
 
+ <!-- Botões de download -->
+    <div id="download-container" class="download-buttons">
+        <button id="mod-dark">Baixar Mod Dark</button>
+        <button id="mod-purple">Baixar Mod Purple</button>
+        <button id="mod-blue">Baixar Mod Blue</button>
+    </div>
+
+
 
 <div class="disclaimer">
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
-// Função principal executada quando o conteúdo da página estiver carregado
-        document.addEventListener("DOMContentLoaded", function () {
-            // Verifica se a URL contém o parâmetro `?baixar`
-            if (window.location.search.includes("baixar")) {
-                console.log("Parâmetro ?baixar detectado na URL.");
+ // Função para verificar se o parâmetro ?baixar ou #?baixar está presente na URL
+        function verificarUrl() {
+            const url = window.location.href;
+            const hasBaixar = url.includes('?baixar') || url.includes('#?baixar') || url.includes('#!?baixar');
 
-                // Altera o título da página
-                document.title = "Baixar rápido";
-
-                // Seleciona os elementos dos botões
-                const blueButtons = document.getElementById("blue-buttons");
-                const purpleButtons = document.getElementById("purple-buttons");
-                const blackButtons = document.getElementById("black-buttons");
-
-                // Adiciona a classe 'active' para exibir os botões
-                blueButtons.classList.add("active");
-                purpleButtons.classList.add("active");
-                blackButtons.classList.add("active");
-            } else {
-                // Se não tiver o parâmetro ?baixar, ocultar o conteúdo
-                document.body.innerHTML = "<h1>Apenas acessível via link de download.</h1>";
+            if (hasBaixar) {
+                // Exibe os botões de download
+                document.getElementById('download-container').classList.add('visible');
             }
+        }
+
+    function showRule46() {
+        var rule = document.getElementById('rule46');
+        rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showExplanation() {
+        var explanation = document.getElementById('explanation');
+        explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showMod(color) {
+        const colors = ['blue', 'purple', 'black'];
+        colors.forEach(c => {
+            document.getElementById(`${c}-screenshots`).style.display = 'none';
+            document.getElementById(`${c}-buttons`).classList.remove('active');
         });
+        document.getElementById(`${color}-screenshots`).style.display = 'block';
+        document.getElementById(`${color}-buttons`).classList.add('active');
+    }
+
+        // Chama a função ao carregar a página
+        window.onload = verificarUrl;
     </script>
     <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
       <p><strong>SE ENCONTRAR UM BUG ME CHAME NO DISCORD IMEDIATAMENTE </strong> Discord user: Intocado</p>
