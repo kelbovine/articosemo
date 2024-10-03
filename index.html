@@ -275,6 +275,9 @@
 
     <h1>GarticMod para Android</h1>
     <p>Aqui está o novo mod do Gartic com funções desbloqueadas e habilitadas.</p>
+    <p>Ontem o Gartic derrubou o site, mandou o host a derrubar, mas tamo de volta!!!</p>
+            <p>Não fazem coisa melhor, e não deixar os outros fazerem, vai cuidar do Gartic.io/Phone que vocês ganham mais!</p>
+    
         <h3>Conta Oficial do Gartic para divulgação: Bucks</h3>
             <h3>Atualização toda semana, atualize!</h3>
 <a href="https://replygtc.onrender.com/" style="color: #450076; text-decoration: underline;">SITE DE RESPOSTAS COM FILTROS DE BUSCA</a>
@@ -354,17 +357,17 @@
     </div>
 
     <div class="download-buttons" id="blue-buttons">
-        <h2>Download Mod Blue 7.5:</h2>
+        <h2>Download Mod Blue 7.8:</h2>
         <a href="https://github.com/kepplinho/gtcm/releases/nload/atual2/GarticBlue7.5.1Final.apk" class="blue-btn">Baixar</a>
     </div>
 
     <div class="download-buttons" id="purple-buttons">
-        <h2>Download Mod Purple 7.5:</h2>
+        <h2>Download Mod Purple 7.8:</h2>
         <a href="https://github.com/kepplinho/gtcm/releases/downl/atual2/GarticDark7.5.1Final.apk" class="purple-btn">Baixar</a>
     </div>
 
     <div class="download-buttons" id="black-buttons">
-        <h2>Download Mod Dark 7.5:</h2>
+        <h2>Download Mod Dark 7.8:</h2>
         <a href="https://github.com/kepplinho/gtcm/releases/downd/atual2/GarticPurple7.5.1Final.apk" class="black-btn">Baixar</a>
     </div>
 
@@ -418,17 +421,20 @@
     </div>
 
 <div class="upcoming-features">
-    <h2>O que mudou nessa versão 7.5? Att complementar</h2>
+    <h2>O que mudou nessa versão 7.8? Att complementar</h2>
     <ul>
-        <li><span class="highlight">Criar conta ficou mais prático:</span> apenas com nick, email e senha. já cria a conta</li>
-        <li><span class="highlight">Criar sala também:</span> todas as info em única página para criar sala.</li>
-        <li><span class="highlight">Corrigido o bug na tela do vencedor com teclado aberto:</span> estavam desalinhados.</li>
+        <li><span class="highlight">Botão de atualize:</span> Ao clicar nele vai direto para essa sessão.</li>
+        <li><span class="highlight">Com novos links internos:</span> Próprio Gartic tinha derrubado.</li>
+                <li><span class="highlight">É necessário atualizar imediatamente:</span> para manter a segurança do antiban.</li>
     </ul>
 </div>
 
 <div class="upcoming-features">
     <h2>O que mudou nessa versão 7.0+?</h2>
     <ul>
+     <li><span class="highlight">Criar conta ficou mais prático:</span> apenas com nick, email e senha. já cria a conta</li>
+        <li><span class="highlight">Criar sala também:</span> todas as info em única página para criar sala.</li>
+        <li><span class="highlight">Corrigido o bug na tela do vencedor com teclado aberto:</span> estavam desalinhados.</li>
         <li><span class="highlight">Contador de jogando agora, o mesmo do site:</span> na tela inicial.</li>
         <li><span class="highlight">Mostra os nomes dos jogadores na tela de confirmação de sala:</span> mostra usando os layouts do app mesmo.</li>
         <li><span class="highlight">Apps renomeados de acordo com a cor que usa:</span> no menu de aplicativos ficará exemplo GarticPurple.</li>
@@ -459,7 +465,6 @@
     É porque para evitar entrar em uma sala cheia através de um bug, o Gartic colocou um limite de tentativas de acesso ao clicar no botão de entrada, tanto no aplicativo normal/mod quanto no site de PC. Alguns meses atrás, havia bots que entravam e enchiam as salas, mesmo as cheias, tanto em contas não-cadastradas quanto em salas criadas. Se alguém fizer isso, clicando bastante em entrar e a sala estiver cheia, será bloqueado, e o bloqueio dura de 30 a 40 minutos antes de retornar ao normal para jogar.
 </div>
 
-<!-- Container para a Regra 46 -->
 <div id="rule46" style="display:none; margin-top: 10px; background-color: #f8d7da; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px;">
     <strong>Regra 46:</strong> O usuário que fizer o uso de bots, hacks ou quaisquer outros meios automáticos, sob qualquer circunstância dentro ou fora do jogo, estará sujeito à perda imediata da conta sem aviso prévio (incluindo suas contas vinculadas).
 </div>
@@ -500,13 +505,10 @@
     }
     
     document.addEventListener("DOMContentLoaded", function() {
-    // Verifica se a URL atual contém '?baixar'
     if (window.location.href.includes("?baixar")) {
-        // Seleciona a div com a classe 'color-options'
         var targetElement = document.querySelector('.color-options');
         
         if (targetElement) {
-            // Rola suavemente até o elemento
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     }
