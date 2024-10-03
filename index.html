@@ -455,7 +455,7 @@
     É porque para evitar entrar em uma sala cheia através de um bug, o Gartic colocou um limite de tentativas de acesso ao clicar no botão de entrada, tanto no aplicativo normal/mod quanto no site de PC. Alguns meses atrás, havia bots que entravam e enchiam as salas, mesmo as cheias, tanto em contas não-cadastradas quanto em salas criadas. Se alguém fizer isso, clicando bastante em entrar e a sala estiver cheia, será bloqueado, e o bloqueio dura de 30 a 40 minutos antes de retornar ao normal para jogar.
 </div>
 
-
+<!-- Container para a Regra 46 -->
 <div id="rule46" style="display:none; margin-top: 10px; background-color: #f8d7da; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px;">
     <strong>Regra 46:</strong> O usuário que fizer o uso de bots, hacks ou quaisquer outros meios automáticos, sob qualquer circunstância dentro ou fora do jogo, estará sujeito à perda imediata da conta sem aviso prévio (incluindo suas contas vinculadas).
 </div>
@@ -474,17 +474,19 @@
     <p><strong>Isenção de Responsabilidade:</strong> Não me responsabilizo por quaisquer danos, seja na sua conta do Gartic, em caso de uso indevido. Use por sua conta e risco.</p>
 </div>
 <script>
-
+    // Função para alternar a visibilidade de 'rule46'
     function showRule46() {
         var rule = document.getElementById('rule46');
         rule.style.display = rule.style.display === 'none' ? 'block' : 'none';
     }
 
+    // Função para alternar a visibilidade de 'explanation'
     function showExplanation() {
         var explanation = document.getElementById('explanation');
         explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
     }
 
+    // Função para exibir apenas um conjunto de botões e ocultar os outros
     function showMod(color) {
         const colors = ['blue', 'purple', 'black'];
         colors.forEach(c => {
@@ -494,58 +496,67 @@
         document.getElementById(`${color}-screenshots`).style.display = 'block';
         document.getElementById(`${color}-buttons`).classList.add('active');
     }
-    
-    document.addEventListener("DOMContentLoaded", function() {
 
-    if (window.location.hash === "#baixar") {
+    // Função para manipular a página quando o parâmetro '?baixar' está presente
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.search.includes("baixar")) {
+            // Altera o título da página
+            document.title = "Baixar rápido";
 
-        document.body.innerHTML = '';
+            // Seleciona apenas os botões desejados
+            const blueButtons = document.getElementById("blue-buttons");
+            const purpleButtons = document.getElementById("purple-buttons");
+            const blackButtons = document.getElementById("black-buttons");
 
+            // Cria um novo contêiner para os botões
+            const container = document.createElement("div");
+            container.style.display = "flex";
+            container.style.flexDirection = "column";
+            container.style.alignItems = "center";
 
-        let container = document.createElement("div");
-        container.style.textAlign = "center"; 
-        container.style.marginTop = "50px"; 
+            // Adiciona apenas os botões ao novo contêiner
+            if (blueButtons) container.appendChild(blueButtons);
+            if (purpleButtons) container.appendChild(purpleButtons);
+            if (blackButtons) container.appendChild(blackButtons);
 
+            // Remove todo o conteúdo anterior do body
+            document.body.innerHTML = "";
 
-        let downloadButtonsHTML = `
-            <div class="download-buttons" id="blue-buttons">
-                <h2>Download Mod Blue 7.8:</h2>
-                <a href="https://github.com/kepplinho/gtcm/releases/nload/atual2/GarticBlue7.5.1Final.apk" class="blue-btn">Baixar</a>
-            </div>
+            // Adiciona o novo contêiner ao body
+            document.body.appendChild(container);
 
-            <div class="download-buttons" id="purple-buttons">
-                <h2>Download Mod Purple 7.8:</h2>
-                <a href="https://github.com/kepplinho/gtcm/releases/downl/atual2/GarticDark7.5.1Final.apk" class="purple-btn">Baixar</a>
-            </div>
+            // Estilo básico para os botões
+            const styles = `
+                .download-buttons {
+                    margin: 20px;
+                    padding: 10px;
+                }
+                .download-buttons h2 {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                .blue-btn, .purple-btn, .black-btn {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    margin: 5px;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+                .blue-btn { background-color: #007bff; }
+                .purple-btn { background-color: #6f42c1; }
+                .black-btn { background-color: #343a40; }
+                .active { font-weight: bold; }
+            `;
 
-            <div class="download-buttons" id="black-buttons">
-                <h2>Download Mod Dark 7.8:</h2>
-                <a href="https://github.com/kepplinho/gtcm/releases/downd/atual2/GarticPurple7.5.1Final.apk" class="black-btn">Baixar</a>
-            </div>
-        `;
-
-
-        container.innerHTML = downloadButtonsHTML;
-        
-
-        document.body.appendChild(container);
-
-        // Personaliza os estilos dos botões
-        document.querySelectorAll('.download-buttons a').forEach(button => {
-            button.style.display = 'inline-block';
-            button.style.padding = '10px 20px';
-            button.style.margin = '10px';
-            button.style.color = '#fff';
-            button.style.textDecoration = 'none';
-            button.style.borderRadius = '5px';
-        });
-
-
-        document.querySelector('.blue-btn').style.backgroundColor = '#007bff'; 
-        document.querySelector('.purple-btn').style.backgroundColor = '#6f42c1';
-        document.querySelector('.black-btn').style.backgroundColor = '#343a40'; 
-    }
-});
+            // Adiciona o estilo ao head da página
+            const styleSheet = document.createElement("style");
+            styleSheet.type = "text/css";
+            styleSheet.innerText = styles;
+            document.head.appendChild(styleSheet);
+        }
+    });
 </script>
 
         <p><strong> Atualização 03/09 </strong> 7.8 ^</p>
